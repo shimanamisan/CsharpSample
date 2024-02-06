@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMahApps.Metro", "SampleMahApps.Metro\SampleMahApps.Metro.csproj", "{EDF1BFFC-02BB-428D-9185-BE8488637F56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDF1BFFC-02BB-428D-9185-BE8488637F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF1BFFC-02BB-428D-9185-BE8488637F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF1BFFC-02BB-428D-9185-BE8488637F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF1BFFC-02BB-428D-9185-BE8488637F56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {291F3EC7-736C-4756-A24A-186036879314}
+	EndGlobalSection
+EndGlobal

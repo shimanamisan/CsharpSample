@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVM.SampleMahApps.Metro", "MVVM-Test-App\MVVM.SampleMahApps.Metro.csproj", "{89C72B30-5B53-44A1-81BD-A0C14F49A9AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目", "ソリューション項目", "{5236147F-7021-45CE-B248-82F9FAAB1684}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89C72B30-5B53-44A1-81BD-A0C14F49A9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C72B30-5B53-44A1-81BD-A0C14F49A9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C72B30-5B53-44A1-81BD-A0C14F49A9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C72B30-5B53-44A1-81BD-A0C14F49A9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29906EC5-7B23-4678-BCF5-EA2B8562CAC4}
+	EndGlobalSection
+EndGlobal
