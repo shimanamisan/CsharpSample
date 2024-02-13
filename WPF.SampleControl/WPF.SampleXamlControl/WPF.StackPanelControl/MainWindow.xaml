@@ -1,0 +1,63 @@
+﻿<Window x:Class="WPF.StackPanelControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WPF.StackPanelControl"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        mc:Ignorable="d">
+    <Grid Margin="32">
+        <!--  デフォルトは縦方向に配置される  -->
+        <StackPanel>
+            <!--  縦方向に配置される要素  -->
+            <Label Height="30" Content="ラベル" />
+            <TextBox Height="30" />
+            <TextBox Height="30" />
+            <Button Height="30" Content="ボタン" />
+
+            <!--  横方向に配置される要素  -->
+            <StackPanel Margin="0,32,0,0" Orientation="Horizontal">
+
+                <Label Width="100"
+                       Height="30"
+                       Content="ラベル" />
+                <TextBox Width="100" Height="30" />
+                <TextBox Width="100" Height="30" />
+                <Button Width="100"
+                        Height="30"
+                        Content="ボタン" />
+            </StackPanel>
+
+            <!--  横並びで且つ中央揃え  -->
+            <StackPanel Margin="0,32,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+
+                <Label Width="100"
+                       Height="30"
+                       Content="ラベル" />
+                <TextBox Width="100" Height="30" />
+                <TextBox Width="100" Height="30" />
+                <Button Width="100"
+                        Height="30"
+                        Content="ボタン" />
+            </StackPanel>
+
+            <!--  領域からはみ出た場合、子要素は見切れる  -->
+            <StackPanel Margin="0,32,0,0">
+                <Label Width="100"
+                       Height="30"
+                       Content="ラベル" />
+                <TextBox Width="100" Height="30" />
+                <TextBox Width="100" Height="30" />
+                <Button Width="100"
+                        Height="30"
+                        Content="ボタン" />
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
