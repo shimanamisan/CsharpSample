@@ -14,7 +14,8 @@ git clone git@github.com:shimanamisan/CsharpSample.git
 
 # Author
 
-- X: [@hn_pgtech](https://twitter.com/hn_pgtech)
+- H.Nishihara
+- Twitter: [@hn_pgtech](https://twitter.com/hn_pgtech)
 - Blog: [https://hn-pgtech.com/](https://hn-pgtech.com/)
 
 
