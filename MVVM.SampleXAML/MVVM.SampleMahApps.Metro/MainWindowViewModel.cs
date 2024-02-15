@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input; // 追加
-using System.IO; // 追加
+using System.IO;
+using System; // 追加
 
 namespace MVVM.SampleMahApps.Metro
 {

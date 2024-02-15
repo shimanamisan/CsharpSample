@@ -1,0 +1,33 @@
+﻿<mah:MetroWindow x:Class="MVVM.OverlayOnProgressBar.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:ovl="clr-namespace:MVVM.OverlayOnProgressBar.View"
+                 Title="MainWindow"
+                 Width="450"
+                 Height="450"
+                 WindowStartupLocation="CenterScreen"
+                 mc:Ignorable="d">
+    <Grid>
+
+        <!--  UserControlを呼び出す  -->
+        <Grid Panel.ZIndex="999" Visibility="{Binding IsOverlay}">
+            <ovl:Overlay />
+        </Grid>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+
+            <Button Width="200"
+                    Height="50"
+                    Command="{Binding ShowOverlayButtonCommand}"
+                    Content="オーバーレイを表示"
+                    Cursor="Hand"
+                    Style="{StaticResource MahApps.Styles.Button.Square}" />
+
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

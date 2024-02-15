@@ -1,10 +1,7 @@
-﻿<!--  Mainwindow.xaml  -->
-<!--  Windowディレクティブを mah:MetroWindowに変更する  -->
-<mah:MetroWindow x:Class="MVVM.SampleMahApps.Metro.MainWindow"
+﻿<mah:MetroWindow x:Class="MVVM.SampleMahApps.Metro.MainWindow"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                 xmlns:local="clr-namespace:MVVM.SampleMahApps.Metro"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  Title="MainWindow"

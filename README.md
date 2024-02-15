@@ -14,9 +14,10 @@ git clone git@github.com:shimanamisan/CsharpSample.git
 
 # Author
 
-[@hn_pgtech](https://twitter.com/hn_pgtech)
+- X: [@hn_pgtech](https://twitter.com/hn_pgtech)
+- Blog: [https://hn-pgtech.com/](https://hn-pgtech.com/)
 
 
 # License
 
-MIT License
+[MIT License](https://en.wikipedia.org/wiki/MIT_License)
