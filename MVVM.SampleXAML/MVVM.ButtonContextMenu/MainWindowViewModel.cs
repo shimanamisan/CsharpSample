@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace MVVM.ButtonContextMenu
@@ -9,39 +8,43 @@ namespace MVVM.ButtonContextMenu
     /// </summary>
     public sealed class MainWindowViewModel : BindableBase
     {
+
+        #region コマンド
+
         /// <summary>
-        /// 最初のメニューアイテムの実行に関連するコマンド。
+        /// 一番目メニューアイテムの実行に関連するコマンド。
         /// </summary>
-        public DelegateCommand<object> MenuItemExecute { get; }
+        public DelegateCommand<object> FirstMenuItemCommand
+            => _firstMenuItemCommand ?? (_firstMenuItemCommand = new DelegateCommand<object>(OnFirstMenuItemFirst));
+        private DelegateCommand<object> _firstMenuItemCommand;
 
         /// <summary>
         /// 二番目のメニューアイテムの実行に関連するコマンド。
         /// </summary>
-        public DelegateCommand<object> MenuItemExecute2 { get; }
+        public DelegateCommand<object> SecondMenuItemCommand
+            => _secondMenuItemCommand ?? (_secondMenuItemCommand = new DelegateCommand<object>(OnSecondMenuItem));
+        private DelegateCommand<object> _secondMenuItemCommand;
 
         /// <summary>
         /// ボタンをクリックした際のメニューアイテムの実行に関連するコマンド。
         /// </summary>
-        public DelegateCommand<object> ExecuteOpenContextMenu { get; }
+        public DelegateCommand<object> OpenContextMenuCommand
+            => _openContextMenuCommand ?? (_openContextMenuCommand = new DelegateCommand<object>(OnOpenContextMenu));
+        private DelegateCommand<object> _openContextMenuCommand;
+
+        #endregion
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public MainWindowViewModel()
-        {
-            MenuItemExecute = new DelegateCommand<object>(MenuItemFirst);
-
-            MenuItemExecute2 = new DelegateCommand<object>(MenuItemSecond);
-
-            ExecuteOpenContextMenu = new DelegateCommand<object>(OpenContextMenu);
-
-        }
+        { }
 
         /// <summary>
         /// メインのボタンを押したときにContextMenuを開く方法
         /// </summary>
         /// <param name="o"></param>
-        private void OpenContextMenu(object o)
+        private void OnOpenContextMenu(object o)
         {
             var button = o as Button;
 
@@ -56,7 +59,7 @@ namespace MVVM.ButtonContextMenu
         /// 最初のメニューアイテムのコマンド実行メソッド。そのチェック状態をトグルし、メッセージボックスを表示します。
         /// </summary>
         /// <param name="o">コマンドを呼び出したメニューアイテムオブジェクト。</param>
-        private void MenuItemFirst(object o)
+        private void OnFirstMenuItemFirst(object o)
         {
 
             var meuItem = o as MenuItem;
@@ -86,7 +89,7 @@ namespace MVVM.ButtonContextMenu
         /// 二番目のメニューアイテムのコマンド実行メソッド。そのチェック状態をトグルし、メッセージボックスを表示します。
         /// </summary>
         /// <param name="o">コマンドを呼び出したメニューアイテムオブジェクト。</param>
-        private void MenuItemSecond(object o)
+        private void OnSecondMenuItem(object o)
         {
             var meuItem = o as MenuItem;
 
