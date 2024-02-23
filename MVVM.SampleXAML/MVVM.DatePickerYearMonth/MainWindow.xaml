@@ -1,0 +1,80 @@
+﻿<Window x:Class="MVVM.DatePickerYearMonth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:attachd="clr-namespace:MVVM.DatePickerYearMonth.AttachedProperty"
+        xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MVVM.DatePickerYearMonth.CustomControl"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="450"
+        Height="450"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+
+            <StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+
+                    <StackPanel>
+                        <Label Width="120" Content="依存関係プロパティ" />
+
+                        <!--  カスタムコントロールを読み込み  -->
+                        <local:CustomButton Width="120"
+                                            Height="30"
+                                            Content="ボタン"
+                                            IsShowMessageDP="True" />
+
+                    </StackPanel>
+
+                    <StackPanel Margin="42,0,0,0">
+                        <Label Width="120" Content="添付プロパティ" />
+
+                        <!--  添付プロパティを付与する  -->
+                        <Button Width="120"
+                                Height="30"
+                                attachd:ButtonExtends.IsShowMessageAT="True"
+                                Content="ボタン" />
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Margin="0,32,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+
+                <StackPanel>
+                    <Label Width="120" Content="依存関係プロパティ" />
+                    <local:CustomDatePicker Width="120"
+                                            Padding="8"
+                                            DateFormatDP="yyyy年MMM"
+                                            IsMonthYearDP="True" />
+                </StackPanel>
+
+
+                <StackPanel Margin="42,0,0,0">
+                    <Label Width="120" Content="添付プロパティ" />
+                    <DatePicker Width="120"
+                                Padding="8"
+                                attachd:DatePickerCalendarBehavior.IsMonthYear="True"
+                                attachd:DatePickerDateFormatBehavior.DateFormat="yyyy年MMM"
+                                SelectedDate="{Binding MonthYear}" />
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Margin="0,32,0,0">
+                <Label Width="150" Content="和暦表示" />
+                <TextBlock Width="150"
+                           Padding="8"
+                           Text="{Binding JapaneseEra}" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

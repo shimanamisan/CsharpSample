@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVM.SampleMahApps.Metro", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVM.OverlayOnProgressBar", "MVVM.OverlayOnProgressBar\MVVM.OverlayOnProgressBar.csproj", "{AA2E21BD-4870-4606-8058-8E087CDD4474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM.DatePickerYearMonth", "MVVM.DatePickerYearMonth\MVVM.DatePickerYearMonth.csproj", "{20EB8640-F6E2-4A44-A806-A53D25BE40CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AA2E21BD-4870-4606-8058-8E087CDD4474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA2E21BD-4870-4606-8058-8E087CDD4474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA2E21BD-4870-4606-8058-8E087CDD4474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20EB8640-F6E2-4A44-A806-A53D25BE40CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EB8640-F6E2-4A44-A806-A53D25BE40CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EB8640-F6E2-4A44-A806-A53D25BE40CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EB8640-F6E2-4A44-A806-A53D25BE40CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
