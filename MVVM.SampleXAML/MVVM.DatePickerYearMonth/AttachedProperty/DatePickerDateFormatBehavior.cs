@@ -149,8 +149,7 @@ namespace MVVM.DatePickerYearMonth.AttachedProperty
         /// <param name="e">イベント引数</param>
         private static void TextBoxOnPreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key != Key.Return)
-                return;
+            if (e.Key != Key.Return) return;
 
             /* 
              * DatePickerは、Key.Returnが押された場合、テキストボックスのKeyDownイベントを購読してSelectedDateを設定します。
