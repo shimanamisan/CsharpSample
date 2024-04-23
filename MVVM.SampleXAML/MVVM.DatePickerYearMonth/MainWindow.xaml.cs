@@ -14,6 +14,11 @@ namespace MVVM.DatePickerYearMonth
 
             DataContext = new MainWIndowViewModel();
 
+            // コントロールをインスタンス化
+            var b = new CustomControl.CustomButton();
+            // メッセージボックスを表示するフラグを指定
+            b.IsShowMessageDP = true;
+
         }
     }
 }
