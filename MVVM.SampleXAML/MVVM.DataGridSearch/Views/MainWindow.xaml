@@ -49,6 +49,7 @@
                       Width="300"
                       HorizontalAlignment="Left"
                       Cursor="">
+
                     <TextBlock Margin="20,0"
                                VerticalAlignment="Center"
                                Panel.ZIndex="1"
@@ -102,6 +103,7 @@
                         <!--#endregion-->
 
                         <!--#region IDカラム-->
+
                         <DataGridTemplateColumn Width="Auto"
                                                 CanUserResize="False"
                                                 Header="#"
@@ -118,6 +120,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
 
+                        <!--#endregion-->
 
                         <!--#region 氏名カラム-->
                         <DataGridTemplateColumn Width="Auto"
