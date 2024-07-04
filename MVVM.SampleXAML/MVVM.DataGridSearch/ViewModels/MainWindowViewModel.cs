@@ -15,13 +15,18 @@ namespace MVVM.DataGridSearch.ViewModels
 
         #region プロパティ
 
+        public bool IsTextEmpty => string.IsNullOrWhiteSpace(SearchText);
+
         public string SearchText
         {
             get => _searchText;
             set
             {
-                SetProperty(ref _searchText, value);
-                FilterItems();
+                if(SetProperty(ref _searchText, value))
+                {
+                    RaisePropertyChanged(nameof(IsTextEmpty));
+                    FilterItems();
+                }
             }
         }   
         private string _searchText;
@@ -65,7 +70,6 @@ namespace MVVM.DataGridSearch.ViewModels
         {
             if (string.IsNullOrWhiteSpace(SearchText)) // 検索文字列が空の場合はTrueを返す
             {
-                //FilterMemberData.Clear();
                 FilterMemberData = _originalMemberData;
             }
             else

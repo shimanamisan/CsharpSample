@@ -47,8 +47,7 @@
                 <!--#region Search TextBox-->
                 <Grid Grid.Row="0"
                       Width="300"
-                      HorizontalAlignment="Left"
-                      Cursor="">
+                      HorizontalAlignment="Left">
 
                     <TextBlock Margin="20,0"
                                VerticalAlignment="Center"
@@ -56,7 +55,7 @@
                                Foreground="#b0b9c6"
                                IsHitTestVisible="False"
                                Text="氏名で検索する"
-                               Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" />
+                               Visibility="{Binding IsTextEmpty, Converter={StaticResource BoolToVis}}" />
 
                     <TextBox x:Name="txtSearch"
                              Style="{StaticResource textBoxSearch}"
@@ -82,12 +81,12 @@
 
                 <DataGrid x:Name="membersDataGrid"
                           Grid.Row="1"
-                          CellStyle="{DynamicResource DataGridCellStyle1}"
-                          ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                          CellStyle="{DynamicResource DataGridCellStyle}"
+                          ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
                           ItemsSource="{Binding FilterMemberData}"
-                          RowStyle="{DynamicResource DataGridRowStyle1}"
+                          RowStyle="{DynamicResource DataGridRowStyle}"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          Style="{DynamicResource DataGridStyle1}">
+                          Style="{DynamicResource DataGridStyle}">
                     <DataGrid.Columns>
 
                         <!--#region チェックボックス-->
@@ -103,7 +102,6 @@
                         <!--#endregion-->
 
                         <!--#region IDカラム-->
-
                         <DataGridTemplateColumn Width="Auto"
                                                 CanUserResize="False"
                                                 Header="#"
@@ -119,7 +117,6 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
                         <!--#endregion-->
 
                         <!--#region 氏名カラム-->
@@ -158,7 +155,6 @@
                                             Binding="{Binding PhoneNumber}"
                                             Header="電話番号"
                                             IsReadOnly="True" />
-                        <!--  FormattedValue  -->
 
                         <DataGridTextColumn Width="Auto"
                                             Binding="{Binding PostalCode.Value}"
@@ -179,8 +175,6 @@
                                             Binding="{Binding CreatedAt.DisplayJapaneseEraFullFromat}"
                                             Header="登録日"
                                             IsReadOnly="True" />
-
-                        <!--  DisplayJapaneseEra  -->
 
                         <DataGridTemplateColumn Width="Auto"
                                                 Header="編集"
