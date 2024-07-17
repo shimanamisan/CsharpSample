@@ -6,4 +6,4 @@ MahApp.Metroを使用してスタイルを適応したアプリケーション�
 
 # 解説記事
 
-[![2021-11-07](https://github.com/shimanamisan/CsharpSample/assets/49751604/44b0851a-f29d-458b-b05d-3738f9046519)](https://blog.hn-pgtech.com/2021-11-07/)
+- [MahApps.MetroでUIをかっこよくする](https://blog.hn-pgtech.com/2021-11-07/)
