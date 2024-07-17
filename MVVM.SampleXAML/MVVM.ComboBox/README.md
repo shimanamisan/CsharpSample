@@ -8,6 +8,4 @@ MVVM構成でコンボボックスを実装したサンプルアプリケーシ�
 
 # 解説記事
 
-[![2023-06-02](https://github.com/shimanamisan/CsharpSample/assets/49751604/a520072d-fde9-4080-9e45-837a4b6ff77e)](https://blog.hn-pgtech.com/2023-06-02/)
-
-
+- [【WPF】MVVMでコンボボックスの使用方法](https://blog.hn-pgtech.com/2023-06-02/)

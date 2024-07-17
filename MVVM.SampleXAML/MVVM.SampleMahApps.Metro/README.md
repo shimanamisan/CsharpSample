@@ -8,6 +8,4 @@
 
 # 解説記事
 
-[![2021-11-14](https://github.com/shimanamisan/CsharpSample/assets/49751604/0cab02c1-c6fe-4d58-9373-6c9682b9a065)](https://blog.hn-pgtech.com/2021-11-14/)
-
-
+- [【WPF】MVVMについて整理する](https://blog.hn-pgtech.com/2021-11-14/)

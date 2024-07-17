@@ -8,7 +8,7 @@ Textbox と DataGrid のスタイルをカスタマイズしたサンプルア�
 
 # 解説記事
 
-[![【WPF】DataGridのスタイルをカスタマイズする](https://github.com/shimanamisan/hn-pgtech-blog/assets/49751604/79480ccd-f382-4981-bd3d-4a3174716ffa)](https://blog.hn-pgtech.com/2024-07-04/)
+- [【WPF】DataGridのスタイルをカスタマイズする](https://blog.hn-pgtech.com/2024-07-04/)
 
 # 使い方
 

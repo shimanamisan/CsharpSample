@@ -8,6 +8,4 @@ NLogの機能について試したアプリケーションです。
 
 # 解説記事
 
-[![NLogTutorial](https://github.com/shimanamisan/CsharpSample/assets/49751604/aa2701c2-4e44-4d90-a9e5-740f3ab6f89f)](https://blog.hn-pgtech.com/2023-03-20/)
-
-
+- [NLogの使い方について](https://blog.hn-pgtech.com/2023-03-20/)
