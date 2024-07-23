@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="AppShellNavigation.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AppShellNavigation"
-    Shell.FlyoutBehavior="Disabled"
-    Title="AppShellNavigation">
+<Shell x:Class="AppShellNavigation.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:AppShellNavigation.Views"
+       Title="AppShellNavigation"
+       Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--  一番上に記述したものが起動時のトップページとして表示される  -->
+    <ShellContent Title="LoginView"
+                  ContentTemplate="{DataTemplate local:LoginView}"
+                  Route="loginView" />
+
+    <ShellContent Title="Profile"
+                  ContentTemplate="{DataTemplate local:Profile}"
+                  Route="profile" />
+
+    <!--<ShellContent Title="ProfileDetail"
+                  ContentTemplate="{DataTemplate local:ProfileDetail}"
+                  Route="profile/profiledetail" />-->
 
 </Shell>
