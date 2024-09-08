@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="Catching.Unhandled.Exceptions.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Catching.Unhandled.Exceptions"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="450"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="10">
+
+        <StackPanel Orientation="Vertical">
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Label Content="未処理の例外を補足する" FontSize="24" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="DispatcherException"
+                    Height="40"
+                    Click="DispatcherException_Click"
+                    Content="DispatcherUnhandledException"
+                    Cursor="Hand"
+                    FontSize="18" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="AppDomainException"
+                    Height="40"
+                    Click="AppDomainException_Click"
+                    Content="AppDomain.CurrentDomain.UnhandledException"
+                    Cursor="Hand"
+                    FontSize="18" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="TaskSchedulerException1"
+                    Height="40"
+                    Click="TaskSchedulerException1_Click"
+                    Content="TaskScheduler.UnobservedTaskException1"
+                    Cursor="Hand"
+                    FontSize="18" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="TaskSchedulerException2"
+                    Height="40"
+                    Click="TaskSchedulerException2_Click"
+                    Content="TaskScheduler.UnobservedTaskException2"
+                    Cursor="Hand"
+                    FontSize="18" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="NomalException"
+                    Height="40"
+                    Click="NomalException_Click"
+                    Content="普通にthrowした例外"
+                    Cursor="Hand"
+                    FontSize="24" />
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <Button
+                    x:Name="GarbageCollection"
+                    Height="40"
+                    Content="ガベージコレクションを明示的に実行"
+                    Cursor="Hand"
+                    FontSize="24" Click="GarbageCollection_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
