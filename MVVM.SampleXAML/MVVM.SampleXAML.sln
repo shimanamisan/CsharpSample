@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVM.AsyncConstructorInitia
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVVM.DataGridPagination", "MVVM.DataGridPagination\MVVM.DataGridPagination.csproj", "{6BE31036-7568-42A6-A0B8-673F81F7432C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM.TextBoxValidation", "MVVM.TextBoxValidation\MVVM.TextBoxValidation.csproj", "{617410E2-439E-41C9-A991-05D2F737832C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{6BE31036-7568-42A6-A0B8-673F81F7432C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BE31036-7568-42A6-A0B8-673F81F7432C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BE31036-7568-42A6-A0B8-673F81F7432C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617410E2-439E-41C9-A991-05D2F737832C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617410E2-439E-41C9-A991-05D2F737832C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617410E2-439E-41C9-A991-05D2F737832C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617410E2-439E-41C9-A991-05D2F737832C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
