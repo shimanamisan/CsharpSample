@@ -1,0 +1,123 @@
+﻿<Window x:Class="MVVM.TextBoxValidation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MVVM.TextBoxValidation"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:validRules="clr-namespace:MVVM.TextBoxValidation.ValidationRules"
+        Title="MainWindow"
+        Width="650"
+        Height="500"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <ControlTemplate x:Key="validationErrorTemplate">
+            <StackPanel>
+                <!--  赤い枠の再現  -->
+                <Border BorderBrush="Red" BorderThickness="1">
+                    <!--  元の TextBox の表示  -->
+                    <AdornedElementPlaceholder x:Name="adornedelem" />
+                </Border>
+                <!--  エラーメッセージの表示  -->
+                <TextBlock Margin="0,0,0,20"
+                           Foreground="Red"
+                           Text="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=adornedelem}" />
+            </StackPanel>
+        </ControlTemplate>
+
+        <Style x:Key="ValidatedTextBoxStyle" TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="BorderBrush" Value="#ff6366" />
+                    <Setter Property="Background" Value="#ffe1df" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.ColumnSpan="3"
+                   Margin="8"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   Text="10以上の数値を入力したり、負の値や文字を入力するとエラーになります。" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Margin="2"
+               VerticalContentAlignment="Center"
+               Content="ValidationRule:"
+               FontSize="15" />
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="2"
+                 Padding="5"
+                 VerticalContentAlignment="Center"
+                 FontSize="15"
+                 Style="{StaticResource ValidatedTextBoxStyle}"
+                 Validation.ErrorTemplate="{StaticResource validationErrorTemplate}">
+            <TextBox.Text>
+                <Binding Path="ValidationRuleTextBox"
+                         TargetNullValue=""
+                         UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validRules:TextBoxRule Max="10" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Margin="2"
+               VerticalContentAlignment="Center"
+               Content="ValidatesOnExceptions:"
+               FontSize="15" />
+
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Margin="2"
+                 Padding="5"
+                 VerticalContentAlignment="Center"
+                 FontSize="15"
+                 Style="{StaticResource ValidatedTextBoxStyle}"
+                 Text="{Binding ValidatesOnExceptionsTextBox, TargetNullValue='', UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
+                 Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" />
+
+        <Label Grid.Row="5"
+               Grid.Column="0"
+               Margin="2"
+               VerticalContentAlignment="Center"
+               Content="INotifyDataErrorInfo:"
+               FontSize="15" />
+
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="2"
+                 Padding="5"
+                 VerticalContentAlignment="Center"
+                 FontSize="15"
+                 Style="{StaticResource ValidatedTextBoxStyle}"
+                 Text="{Binding INotifyDataErrorInfoTextBox, TargetNullValue='', UpdateSourceTrigger=PropertyChanged}"
+                 Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" />
+
+    </Grid>
+</Window>
