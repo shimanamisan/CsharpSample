@@ -84,6 +84,8 @@ namespace MVVM.AsyncConstructorInitialization.ViewModels
                 var enumerableData = await _usersRepository.GetUsersAsync();
 
                 FilterMemberData = new ObservableCollection<UserEntity>(enumerableData);
+                // フィルタリング前のデータを保持
+                _originalMemberData = FilterMemberData;
             }
             catch (Exception ex)
             {
