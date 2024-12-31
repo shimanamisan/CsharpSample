@@ -21,21 +21,5 @@ namespace MVVM.MultiWindowSample.Servicies
             // TViewModelの制約
             where TViewModel : class; // 参照型（クラス）であること
 
-        /// <summary>
-        /// サブ画面を表示し、結果をコールバックで返す
-        /// </summary>
-        /// <typeparam name="TWindow">Window</typeparam>
-        /// <typeparam name="TViewModel">Windowと関連したViewModel</typeparam>
-        /// <typeparam name="TResult">戻り値の型</typeparam>
-        /// <param name="parameter">パラメータ</param>
-        /// <param name="resultCallback">結果を受け取るコールバック</param>
-        /// <param name="owner">親ウィンドウ</param>
-        void ShowWindowWithCallback<TWindow, TViewModel, TResult>(
-            object? parameter = null,
-            Action<TResult?>? resultCallback = null,
-            Window? owner = null)
-            where TWindow : Window, new()
-            where TViewModel : class;
-
     }
 }

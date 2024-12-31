@@ -50,12 +50,5 @@ namespace MVVM.MultiWindowSample.Servicies
                 throw;
             }
         }
-
-        public void ShowWindowWithCallback<TWindow, TViewModel, TResult>(object? parameter = null, Action<TResult?>? resultCallback = null, Window? owner = null)
-            where TWindow : Window, new()
-            where TViewModel : class
-        {
-            throw new NotImplementedException();
-        }
     }
 }
