@@ -1,0 +1,19 @@
+﻿<Window x:Class="MVVM.MultiWindowSample.Views.SubWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MVVM.MultiWindowSample.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="SubWindow"
+        Width="800"
+        Height="800"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <Label Content="{Binding UserName}" FontSize="48" />
+        </StackPanel>
+    </Grid>
+</Window>
