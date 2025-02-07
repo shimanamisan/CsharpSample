@@ -327,6 +327,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#7DB0DE" />
+                <Setter Property="BorderBrush" Value="#7DB0DE" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -342,6 +343,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#f44336" />
+                <Setter Property="BorderBrush" Value="#f44336" />
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -1,8 +1,9 @@
-﻿using MVVM.MultiWindowSample.ValueObjects;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MVVM.MultiWindowSample.ValueObjects;
 
 namespace MVVM.MultiWindowSample.Entitirs
 {
-    public sealed class UserEntity
+    public partial class UserEntity : ObservableObject
     {
         public long Id { get; }
         public string Name { get; }
@@ -21,22 +22,26 @@ namespace MVVM.MultiWindowSample.Entitirs
         public DisplayDate CreatedAt { get; }
         public string UpdatedAt { get; }
 
-        public UserEntity(long id,
-                          string name,
-                          string name_hiragana,
-                          long age,
-                          string birthdate,
-                          string gender,
-                          string email,
-                          string phone_number,
-                          string postal_code,
-                          string address,
-                          string company_name,
-                          string credit_card_number,
-                          string expiration_date,
-                          string my_number,
-                          string created_at,
-                          string updated_at)
+        [ObservableProperty]
+        public bool _isPrint = true;
+
+        public UserEntity(
+            long id,
+            string name,
+            string name_hiragana,
+            long age,
+            string birthdate,
+            string gender,
+            string email,
+            string phone_number,
+            string postal_code,
+            string address,
+            string company_name,
+            string credit_card_number,
+            string expiration_date,
+            string my_number,
+            string created_at,
+            string updated_at)
 
         {
             Id = id;

@@ -21,6 +21,14 @@ namespace MVVM.MultiWindowSample
         #region プロパティ
 
         [ObservableProperty]
+        private bool _isAllPrintChecked = true;
+
+        partial void OnIsAllPrintCheckedChanged(bool value)
+        {
+            FilteredCustomerList.ToList().ForEach(user => user.IsPrint = value);
+        }
+
+        [ObservableProperty]
         private string _searchText;
 
         [ObservableProperty]
@@ -56,6 +64,7 @@ namespace MVVM.MultiWindowSample
         }
 
         #region コマンド
+
 
         [RelayCommand]
         private void RowSelected(object? sender)

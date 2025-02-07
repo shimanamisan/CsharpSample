@@ -89,25 +89,24 @@
                           RowStyle="{DynamicResource DataGridRowStyle}"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           Style="{DynamicResource DataGridStyle}">
-                    <bh:Interaction.Triggers>
-                        <bh:EventTrigger EventName="SelectionChanged">
-                            <bh:InvokeCommandAction Command="{Binding RowSelectedCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=SelectedItem}" />
-                        </bh:EventTrigger>
-                    </bh:Interaction.Triggers>
-
                     <DataGrid.Columns>
 
-                        <!--#region チェックボックス-->
-                        <DataGridCheckBoxColumn Width="Auto"
-                                                CanUserResize="False"
-                                                ElementStyle="{StaticResource CheckBoxStyle1}">
-                            <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataGridTemplateColumn Width="Auto"
+                                                Header="編集"
+                                                IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox Style="{StaticResource CheckBoxStyle1}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource gridEditButton}">
+                                            <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}" />
+                                        </Button>
+                                        <Button Margin="5,0,0,0" Style="{StaticResource gridRemoveButton}">
+                                            <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}" />
+                                        </Button>
+                                    </StackPanel>
                                 </DataTemplate>
-                            </DataGridCheckBoxColumn.HeaderTemplate>
-                        </DataGridCheckBoxColumn>
-                        <!--#endregion-->
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
                         <!--#region IDカラム-->
                         <DataGridTemplateColumn Width="Auto"
@@ -184,22 +183,30 @@
                                             Header="登録日"
                                             IsReadOnly="True" />
 
-                        <DataGridTemplateColumn Width="Auto"
-                                                Header="編集"
-                                                IsReadOnly="True">
-                            <DataGridTemplateColumn.CellTemplate>
+                        <!--#region 印刷-->
+                        <DataGridCheckBoxColumn Width="Auto"
+                                                CanUserResize="False"
+                                                ElementStyle="{StaticResource CheckBoxStyle1}">
+                            <DataGridCheckBoxColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource gridEditButton}">
-                                            <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}" />
-                                        </Button>
-                                        <Button Margin="5,0,0,0" Style="{StaticResource gridRemoveButton}">
-                                            <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}" />
-                                        </Button>
+                                    <StackPanel HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Orientation="Horizontal">
+                                        <TextBlock Text="印刷" />
+                                        <CheckBox Margin="2,0,0,0"
+                                                  Cursor="Hand"
+                                                  IsChecked="{Binding DataContext.IsAllPrintChecked, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                  Style="{StaticResource CheckBoxStyle1}" />
                                     </StackPanel>
                                 </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                            </DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataGridCheckBoxColumn.Binding>
+                                <Binding Path="IsPrint" />
+                            </DataGridCheckBoxColumn.Binding>
+
+                        </DataGridCheckBoxColumn>
+                        <!--#endregion-->
+
                     </DataGrid.Columns>
                 </DataGrid>
 
