@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MVVM.MultiWindowSample.ValueObjects;
+using System.Reflection;
 
 namespace MVVM.MultiWindowSample.Entitirs
 {
@@ -60,6 +61,35 @@ namespace MVVM.MultiWindowSample.Entitirs
             MyNumber = my_number;
             CreatedAt = new DisplayDate(created_at);
             UpdatedAt = updated_at;
+        }
+
+        public UserEntity GenNewEntity(
+            string userName,
+            string age,
+            GenderComboBox genderComboBox,
+            string email,
+            string phoneNumber,
+            string zipCode,
+            string address,
+            string companyName)
+        {
+            return new UserEntity(
+                        Id,
+                        userName,
+                        NameHiragana,
+                        Convert.ToInt64(age),
+                        Birthdate,
+                        genderComboBox.DisplayGender,
+                        email,
+                        phoneNumber,
+                        zipCode,
+                        address,
+                        companyName,
+                        CreditCardNumber,
+                        ExpirationDate,
+                        MyNumber,
+                        CreatedAt.Value,
+                        UpdatedAt);
         }
     }
 }

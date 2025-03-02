@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using MVVM.MultiWindowSample.Entitirs;
 using MVVM.MultiWindowSample.Repositories;
-using MVVM.MultiWindowSample.Servicies;
+using MVVM.MultiWindowSample.Services;
 using MVVM.MultiWindowSample.ViewModels;
 using MVVM.MultiWindowSample.Views;
 using System.Collections.ObjectModel;
@@ -65,9 +65,37 @@ namespace MVVM.MultiWindowSample
 
         #region コマンド
 
+        [RelayCommand]
+        private void RowEdit(object? sender)
+        {
+            if (sender is object[] values && values.Length == 2)
+            {
+                var selectedIndex = (int)values[1];
+                if (values[0] is UserEntity entity)
+                {
+                    var paramDic = new Dictionary<int, UserEntity>
+                    {
+                        { selectedIndex, entity }
+                    };
+
+                    var owner = Application.Current.MainWindow;
+
+                    _windowService.ShowWindowWithCallback<SubWindow, SubWindowViewModel, Dictionary<int, UserEntity>?>(
+                        parameter: paramDic,
+                        owner: owner,
+                        resultCallback: CallBackResult);
+
+                    return;
+                }
+
+                //// 型変換に失敗した場合のカスタム例外（Warning）
+                //throw new TypeConversionException(typeof(BackUpInfoItem), values[0]?.GetType() ?? typeof(object));
+            }
+
+        }
 
         [RelayCommand]
-        private void RowSelected(object? sender)
+        private void RowDelete(object? sender)
         {
             if (sender is UserEntity entity)
             {
@@ -109,5 +137,30 @@ namespace MVVM.MultiWindowSample
 
         #endregion
 
+        private void CallBackResult(Dictionary<int, UserEntity>? dic)
+        {
+            if (dic != null)
+            {
+                var keys = dic.Keys;
+
+                var index = keys.FirstOrDefault();
+
+                var entity = dic[index];
+
+                if (entity == null) throw new ArgumentNullException("不正な値です");
+
+                if (index >= 0 && index < _allCustomerList.Count && index < FilteredCustomerList.Count)
+                {
+
+                    UpdateCollectionItem(FilteredCustomerList, index, entity);
+                    UpdateCollectionItem(_allCustomerList, index, entity);
+                }
+            }
+        }
+
+        private void UpdateCollectionItem<T>(ObservableCollection<T> collection, int index, T newEntity)
+        {
+            collection[index] = newEntity;
+        }
     }
 }

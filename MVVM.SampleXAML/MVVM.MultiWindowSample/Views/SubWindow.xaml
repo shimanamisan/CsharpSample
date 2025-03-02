@@ -9,11 +9,184 @@
         Height="800"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
-    <Grid>
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-            <Label Content="{Binding UserName}" FontSize="48" />
-        </StackPanel>
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <StackPanel Margin="0,0,0,24" HorizontalAlignment="Center">
+                <Label Content="編集画面" FontSize="48" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--#region 名前-->
+            <StackPanel Margin="0,0,16,0" HorizontalAlignment="Right">
+                <Label Content="名前" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Column="1"
+                     Width="350"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding UserName}" />
+            <!--#endregion-->
+
+            <!--#region 年齢-->
+            <StackPanel Grid.Row="1"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="年齢" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Width="80"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding Age}" />
+            <!--#endregion-->
+
+            <!--#region 性別-->
+            <StackPanel Grid.Row="2"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="性別" FontSize="32" />
+            </StackPanel>
+
+            <ComboBox Grid.Row="2"
+                      Grid.Column="1"
+                      Width="180"
+                      Margin="0,0,0,24"
+                      Padding="8"
+                      HorizontalAlignment="Left"
+                      Cursor="Hand"
+                      DisplayMemberPath="DisplayGender"
+                      FontSize="24"
+                      ItemsSource="{Binding GenderList}"
+                      SelectedItem="{Binding SelectedGender}" />
+            <!--#endregion-->
+
+            <!--#region Email-->
+            <StackPanel Grid.Row="3"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="Email" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="3"
+                     Grid.Column="1"
+                     Width="350"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding Email}" />
+            <!--#endregion-->
+
+            <!--#region 電話番号-->
+            <StackPanel Grid.Row="4"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="電話番号" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="4"
+                     Grid.Column="1"
+                     Width="350"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding PhoneNumber}" />
+            <!--#endregion-->
+
+            <!--#region 郵便番号-->
+            <StackPanel Grid.Row="5"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="郵便番号" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="5"
+                     Grid.Column="1"
+                     Width="150"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding ZipCode}" />
+            <!--#endregion-->
+
+            <!--#region 住所-->
+            <StackPanel Grid.Row="6"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="住所" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="6"
+                     Grid.Column="1"
+                     Width="500"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding Address}" />
+            <!--#endregion-->
+
+            <!--#region 会社名-->
+            <StackPanel Grid.Row="7"
+                        Margin="0,0,16,0"
+                        HorizontalAlignment="Right">
+                <Label Content="会社名" FontSize="32" />
+            </StackPanel>
+
+            <TextBox Grid.Row="7"
+                     Grid.Column="1"
+                     Width="500"
+                     Margin="0,0,0,24"
+                     Padding="8"
+                     HorizontalAlignment="Left"
+                     FontSize="24"
+                     Text="{Binding CompanyName}" />
+            <!--#endregion-->
+
+            <StackPanel Grid.Row="8"
+                        Grid.Column="1"
+                        Margin="0,0,24,0"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <Button Width="100"
+                        Command="{Binding SaveCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                        Content="保存"
+                        Cursor="Hand"
+                        FontSize="24" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

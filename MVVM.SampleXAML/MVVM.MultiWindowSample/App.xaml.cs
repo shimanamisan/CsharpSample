@@ -4,7 +4,7 @@ using MVVM.MultiWindowSample.Repositories;
 using MVVM.MultiWindowSample.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
-using MVVM.MultiWindowSample.Servicies;
+using MVVM.MultiWindowSample.Services;
 using MVVM.MultiWindowSample.ViewModels;
 
 namespace MVVM.MultiWindowSample

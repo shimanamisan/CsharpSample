@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:cv="clr-namespace:MVVM.MultiWindowSample.Converters"
         Width="1080"
         Height="720"
         AllowsTransparency="True"
@@ -17,6 +18,8 @@
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
+
+        <cv:ArrayMultiValueConverter x:Key="ArrayMultiValueConverter" />
     </Window.Resources>
 
     <Border Background="#eff2f7"
@@ -97,11 +100,25 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource gridEditButton}">
+                                        <Button Command="{Binding DataContext.RowEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" Style="{StaticResource gridEditButton}">
                                             <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}" />
+                                            <Button.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource ArrayMultiValueConverter}">
+                                                    <Binding Path="SelectedItem" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
+                                                    <Binding Path="SelectedIndex" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
+                                                </MultiBinding>
+                                            </Button.CommandParameter>
                                         </Button>
-                                        <Button Margin="5,0,0,0" Style="{StaticResource gridRemoveButton}">
+                                        <Button Margin="5,0,0,0"
+                                                Command="{Binding DataContext.RowDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                Style="{StaticResource gridRemoveButton}">
                                             <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}" />
+                                            <Button.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource ArrayMultiValueConverter}">
+                                                    <Binding Path="SelectedItem" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
+                                                    <Binding Path="SelectedIndex" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
+                                                </MultiBinding>
+                                            </Button.CommandParameter>
                                         </Button>
                                     </StackPanel>
                                 </DataTemplate>
